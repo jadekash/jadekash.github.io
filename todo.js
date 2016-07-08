@@ -16,8 +16,8 @@ function removeitem (id){
 createnumberofitems(0)
 function save() {
   var tasks = [];
-  for(var i=0; i <$("input").length; i++){
-    tasks.push($("input")[i].value);
+  for(var i=0; i <$(":text").length; i++){
+    tasks.push($(":text")[i].value);
   }
   localStorage.tasks = tasks;
 }
