@@ -15,24 +15,22 @@ function removeitem (id){
 
 createnumberofitems(0)
 function save() {
+  var tasks = [];
   for(var i=0; i <$("input").length; i++){
-    console.log($("input")[i].value)
+    tasks.push($("input")[i].value);
   }
+  localStorage.tasks = tasks;
 }
- arr = [];
-function fillArray() {
-  arr.push("Homework");
-  arr.push("Read book");
-  arr.push("review");
-  arr.push("download");
-}
+
+
+
 function load (mytasks){
   for(var i=0; i<mytasks.length;i++){
   addTodoItem(i,mytasks[i]);
 }
 }
-fillArray();
-load(arr);
-console.log(arr)
+$(document).ready(function(){
+   var arr = localStorage.tasks.split(",") || [];
+   load(arr);
+});
  
-
